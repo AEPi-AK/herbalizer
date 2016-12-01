@@ -8,10 +8,65 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   background-color: black;
+  flex-direction: column;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+}
+
+.Logo {
+  position: absolute;
+  /*align-self: flex-start;*/
+  /*margin-top: -250px;*/
+  top: 50px;
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+@keyframes foo {
+    from {
+      box-shadow: 0 0 50px 5px #9A1818;
+    }
+    to {
+      box-shadow: 0 0 50px 0px #9A1818;
+    }
+}
+.Dropzone {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 7px dotted #F62B2B;
+  padding: 40px;
+  border-radius: 25px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  /*animation: foo 1s ease-in-out infinite alternate;*/
+  transition: all 500ms ease;
+  border-radius: 100%;
+}
+
+.Dropzone-active {
+  background-color: #222;
+  border: 7px solid #F62B2B;
+  border-radius: 15px;
+  color: white;
+  transition: all 500ms ease;
+}
+
+.Dropzone-loaded {
+  perspective: 1px;
+  background-color: #222;
+  border: 5px solid #bbb;
+  border-radius: 15px;
+  transition: all 500ms ease;
   color: white;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Dropped-image {
+  border-radius: 10px;
+  max-width:100%;
+  max-height:100%;
+
 }
