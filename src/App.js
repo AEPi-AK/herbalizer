@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logotype from './logotype.svg';
+import download from './download.svg';
 import './App.css';
 import Dropzone from 'react-dropzone'
+import classNames from 'classnames'
 
 const MAX_HEIGHT = 250
+const MAX_BYTES = 5242880 // 5 megabytes
 
 class App extends Component {
   render() {
@@ -24,12 +27,19 @@ class UploadZone extends Component {
       file: null,
       width: 0,
       height: 0,
+      isShaking: false,
     }
+  }
+
+  shake() {
+    this.setState({ isShaking: true })
+    // 820 ms is from CSS. DOM API sucks heuheuheu
+    setTimeout(() => this.setState({ isShaking: false }), 820)
   }
 
   onDrop(files) {
     if (files.length !== 1) {
-      alert("files.length !== 1")
+      this.shake()
       return
     }
 
@@ -67,15 +77,28 @@ class UploadZone extends Component {
         height: this.state.height,
       }
     }
+    const classes = {
+      'Dropzone': !this.state.file,
+      'Dropzone-loaded': this.state.file,
+      'Shaking': this.state.isShaking,
+    }
     return (
       <div className="Uploader">
-        <Dropzone style={style} className={this.state.file ? 'Dropzone-loaded' : 'Dropzone'} onDrop={this.onDrop.bind(this)} activeClassName="Dropzone-active">
+        <Dropzone
+          maxSize={MAX_BYTES}
+          accept={'image/*'}
+          style={style}
+          className={classNames(classes)}
+          onDrop={this.onDrop.bind(this)} activeClassName="Dropzone-active">
           {
             (this.state.file == null) ? null :
             <img className='Dropped-image' src={this.state.file.preview} />
           }
         </Dropzone>
-
+        {
+          (this.state.file == null) ? null :
+          <img className='Download' src={download} />
+        }
       </div>
     );
   }
