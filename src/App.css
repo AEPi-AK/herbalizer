@@ -17,8 +17,8 @@ html, body, #root {
   position: absolute;
   /*align-self: flex-start;*/
   /*margin-top: -250px;*/
-  top: 50px;
-  width: 50vh;
+  top: 25px;
+  width: 350px;
   margin-bottom: 25px;
 }
 
@@ -36,6 +36,13 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.Uploader-status {
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .Dropzone {
