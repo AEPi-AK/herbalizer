@@ -121,6 +121,7 @@ class UploadZone extends Component {
   }
 
   onDrop(files) {
+
     if (files.length !== 1) {
       this.shake()
       this.setStatus('hey, this thing only accepts images — one at a time!')
@@ -159,7 +160,7 @@ class UploadZone extends Component {
           height,
           file: files[0],
           out: applyMurderFilter(profile, bannerImg),
-          status: 'download',
+          status: 'ta-da! thanks for being awesome <3',
         })
       })
     })
@@ -181,14 +182,7 @@ class UploadZone extends Component {
     return (
       <div className="Uploader">
         {
-          this.state.file ? null :
           <div className="Uploader-status">{this.state.status}</div>
-        }
-        {
-          !this.state.file ? null :
-          <a href={this.state.out} download="murderballad-profile.png">
-            <img className='Download' onClick={this.onDownload.bind(this)} src={download} />
-          </a>
         }
         <Dropzone
           maxSize={MAX_BYTES}
@@ -201,6 +195,12 @@ class UploadZone extends Component {
             <img className='Dropped-image' src={this.state.out} />
           }
         </Dropzone>
+        {
+          !this.state.file ? null :
+          <a href={this.state.out} download="murderballad-profile.png">
+            <img className='Download' onClick={this.onDownload.bind(this)} src={download} />
+          </a>
+        }
       </div>
     );
   }

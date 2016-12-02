@@ -26,7 +26,7 @@ html, body, #root {
   right: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
   .Logo {
     margin-top: 10vh;
@@ -36,8 +36,6 @@ html, body, #root {
 
   .Footer {
     position: inherit;
-    /*right: auto;*/
-    /*bottom: 2.5vh;*/
   }
 
 }
@@ -156,6 +154,6 @@ a:hover {
 }
 
 .Download {
-  margin-bottom: 25px;
+  margin-top: 25px;
   width: 150px;
 }
