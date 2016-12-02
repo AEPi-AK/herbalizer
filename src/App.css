@@ -6,7 +6,7 @@ html, body, #root {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: black;
   flex-direction: column;
   color: white;
@@ -14,11 +14,11 @@ html, body, #root {
 }
 
 .Logo {
-  position: absolute;
+  /*position: absolute;*/
   /*align-self: flex-start;*/
-  /*margin-top: -250px;*/
-  top: 25px;
-  width: 350px;
+  margin-top: 10vh;
+  /*top: 25px;*/
+  width: 275px;
   margin-bottom: 25px;
 }
 
@@ -37,6 +37,7 @@ html, body, #root {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 100px;
+  flex-shrink: 0;
 }
 
 .Uploader-status {
@@ -54,8 +55,8 @@ html, body, #root {
   border: 7px dotted #F62B2B;
   padding: 40px;
   border-radius: 25px;
-  width: 150px;
-  height: 150px;
+  width: 15vw;
+  height: 15vw;
   cursor: pointer;
   /*animation: foo 1s ease-in-out infinite alternate;*/
   transition: all 500ms ease;
@@ -88,6 +89,7 @@ html, body, #root {
 }
 
 .Dropzone-active {
+  transform: rotate(0);
   background-color: #222;
   border: 7px solid #F62B2B;
   border-radius: 15px;
