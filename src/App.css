@@ -14,53 +14,78 @@ html, body, #root {
 }
 
 .Logo {
-  /*position: absolute;*/
-  /*align-self: flex-start;*/
   margin-top: 10vh;
-  /*top: 25px;*/
-  width: 275px;
+  min-width: 400px;
   margin-bottom: 25px;
 }
 
-@keyframes foo {
-    from {
-      box-shadow: 0 0 50px 5px #9A1818;
-    }
-    to {
-      box-shadow: 0 0 50px 0px #9A1818;
-    }
+.Footer {
+  color: #777;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
+
+@media (max-width: 800px) {
+
+  .Logo {
+    margin-top: 10vh;
+    min-width: 85vw;
+    margin-bottom: 25px;
+  }
+
+  .Footer {
+    position: inherit;
+    /*right: auto;*/
+    /*bottom: 2.5vh;*/
+  }
+
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #777;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ccc;
+}
+
 
 .Uploader {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 100px;
+  margin-bottom: 10vh;
   flex-shrink: 0;
 }
 
 .Uploader-status {
-  max-width: 300px;
+  max-width: 325px;
   text-align: center;
   margin-bottom: 25px;
+  line-height: 32px;
+  font-size: 22px;
 }
 
-.Dropzone {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 7px dotted #F62B2B;
-  padding: 40px;
-  border-radius: 25px;
-  width: 15vw;
-  height: 15vw;
-  cursor: pointer;
-  /*animation: foo 1s ease-in-out infinite alternate;*/
-  transition: all 500ms ease;
-  border-radius: 100%;
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
 }
 
 @keyframes shake {
@@ -81,6 +106,23 @@ html, body, #root {
   }
 }
 
+.Dropzone {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 7px dotted #F62B2B;
+  padding: 40px;
+  border-radius: 25px;
+  width: 25vw;
+  height: 25vw;
+  cursor: pointer;
+  animation: spin 50s linear infinite;
+  transition: all 500ms ease;
+  border-radius: 100%;
+}
+
 .Shaking {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
@@ -95,24 +137,25 @@ html, body, #root {
   border-radius: 15px;
   color: white;
   transition: all 500ms ease;
+  animation: none;
 }
 
 .Dropzone-loaded {
   perspective: 1px;
   background-color: #222;
   border: 5px solid white;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 500ms ease;
   color: white;
 }
 
 .Dropped-image {
-  border-radius: 10px;
+  border-radius: 4px;
   max-width:100%;
   max-height:100%;
 }
 
 .Download {
-  margin-top: 25px;
+  margin-bottom: 25px;
   width: 150px;
 }
