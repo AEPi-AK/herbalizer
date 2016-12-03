@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <img className="Logo" src={logotype}/>
+        <img alt='Murder Ballad' className="Logo" src={logotype}/>
         <UploadZone/>
         <div className="Footer">
         <a href="http://avi.bio" target="_blank">built & designed by Avi</a>
@@ -72,23 +72,6 @@ function applyMurderFilter(profile, banner) {
                 0, canvas.height - banner.height, banner.width, banner.height)
 
   return canvas.toDataURL('image/png')
-}
-
-class Status extends Component {
-
-  render() {
-    <div className="Uploader-status">
-      {
-        !this.props.text
-        ?
-          <div>
-          </div>
-        :
-          <div>{this.props.text}</div>
-      }
-    </div>
-  }
-
 }
 
 class UploadZone extends Component {
@@ -192,13 +175,13 @@ class UploadZone extends Component {
           onDrop={this.onDrop.bind(this)} activeClassName="Dropzone-active">
           {
             (this.state.out == null) ? null :
-            <img className='Dropped-image' src={this.state.out} />
+            <img alt='generated profile' className='Dropped-image' src={this.state.out} />
           }
         </Dropzone>
         {
           !this.state.file ? null :
           <a href={this.state.out} download="murderballad-profile.png">
-            <img className='Download' onClick={this.onDownload.bind(this)} src={download} />
+            <img alt='download' className='Download' onClick={this.onDownload.bind(this)} src={download} />
           </a>
         }
       </div>
