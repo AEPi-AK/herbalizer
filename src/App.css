@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -10,7 +12,7 @@ html, body, #root {
   background-color: black;
   flex-direction: column;
   color: white;
-  font-family: "azo-sans-web", sans-serif;
+  font-family: 'azo-sans-web', sans-serif;
 }
 
 .Logo {
@@ -27,7 +29,6 @@ html, body, #root {
 }
 
 @media (max-width: 600px) {
-
   .Logo {
     margin-top: 10vh;
     min-width: 85vw;
@@ -37,7 +38,6 @@ html, body, #root {
   .Footer {
     position: inherit;
   }
-
 }
 
 a {
@@ -59,7 +59,6 @@ a:hover {
   color: #ccc;
 }
 
-
 .Uploader {
   display: flex;
   align-items: center;
@@ -78,28 +77,33 @@ a:hover {
 }
 
 @keyframes spin {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
 
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }
@@ -110,7 +114,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 7px dotted #F62B2B;
+  border: 7px dotted #65c200;
   padding: 40px;
   border-radius: 25px;
   width: 25vw;
@@ -122,7 +126,7 @@ a:hover {
 }
 
 .Shaking {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -131,7 +135,7 @@ a:hover {
 .Dropzone-active {
   transform: rotate(0);
   background-color: #222;
-  border: 7px solid #F62B2B;
+  border: 7px solid #65c200;
   border-radius: 15px;
   color: white;
   transition: all 500ms ease;
@@ -149,8 +153,8 @@ a:hover {
 
 .Dropped-image {
   border-radius: 4px;
-  max-width:100%;
-  max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .Download {
